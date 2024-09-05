@@ -25,5 +25,7 @@ jobs:
                   python -m pip install --upgrade pip
                   pip install -r requirements.txt
             - name: rotate
+              env:
+                AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
               run: |
                 python tidy-credentials.py
