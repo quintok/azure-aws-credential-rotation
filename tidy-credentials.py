@@ -83,7 +83,7 @@ async def create_new_application_credential(client, application):
     return creds
 
 def store_new_credential(smclient, application, creds):
-    secret_id = f"{application.id}-test2"
+    secret_id = f"{application.id}"
     try:
         smclient.put_secret_value(
             SecretId=secret_id,
