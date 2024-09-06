@@ -23,12 +23,6 @@ resource "azuread_application" "github_oidc" {
   }
 }
 
-resource "azuread_service_principal_delegated_permission_grant" "example" {
-  service_principal_object_id          = azuread_service_principal.github_sp.object_id
-  resource_service_principal_object_id = azuread_service_principal.msgraph.object_id
-  claim_values                         = ["Application.ReadWrite.OwnedBy"]
-}
-
 resource "azuread_service_principal" "github_sp" {
   client_id                    = azuread_application.github_oidc.client_id
   app_role_assignment_required = false
