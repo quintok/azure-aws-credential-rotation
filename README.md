@@ -27,7 +27,6 @@ loop for each owned application
     Az->>+gh: Get new Credential
     gh->>+AWS: Store credential in Secrets Manager
 end
-gh->>+Az: Delete up to the most recent credential
 
 ```
 
